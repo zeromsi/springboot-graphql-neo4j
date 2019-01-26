@@ -6,7 +6,7 @@ Defalut port of neo4j server is ``` 7474```
 Maven Dependencies:
  
  ```xml
- <dependencies>
+	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-neo4j</artifactId>
@@ -34,12 +34,24 @@ Maven Dependencies:
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
- </dependencies>
+
+		<dependency>
+			<groupId>org.neo4j</groupId>
+			<artifactId>neo4j-ogm-embedded-driver</artifactId>
+			<version>${neo4j-ogm.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.neo4j</groupId>
+			<artifactId>neo4j-ogm-embedded-driver</artifactId>
+			<version>3.1.2</version>
+		</dependency>
+	</dependencies>
  ```
  
  application.properties file:
   ```xml
-spring.data.neo4j.uri=http://localhost:7474
+spring.data.neo4j.uri=bolt://localhost
 spring.data.neo4j.username=neo4j
 spring.data.neo4j.password=pass
   ```
